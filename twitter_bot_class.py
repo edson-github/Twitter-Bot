@@ -128,7 +128,7 @@ class Twitter_Bot:
             raise Exception("You must log in first!") 
 
         bot = self.bot
-        for i in range(cycles):
+        for _ in range(cycles):
             try:
                 bot.find_element(By.XPATH, "//div[@data-testid='like']").click()
                 #like.click()
@@ -140,7 +140,7 @@ class Twitter_Bot:
                 #like.click()
 
             time.sleep(1)
-            bot.execute_script('window.scrollTo(0,document.body.scrollHeight/2.5)') 
+            bot.execute_script('window.scrollTo(0,document.body.scrollHeight/2.5)')
             time.sleep(5)
 
     #This function retweets posts based on keywords
@@ -149,7 +149,7 @@ class Twitter_Bot:
             raise Exception("You must log in first!")
         bot = self.bot
 
-        for i in range(cycles):
+        for _ in range(cycles):
             try:
                 bot.find_element(By.XPATH, "//div[@data-testid='retweet']").click()
                 time.sleep(1)
